@@ -27,6 +27,7 @@ const withBundleAnalyzer = NextBundleAnalyzer({
 });
 
 export default withBundleAnalyzer({
+  output: 'export',
   basePath,
   generateBuildId,
 
