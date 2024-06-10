@@ -10,9 +10,9 @@ import {
 } from './styles';
 
 export const EarlyAdoptionStatus: FC = () => {
-  const { data: isEligible, error, loading } = useCsmEarlyAdoption();
+  const { data: isEligible, error, initialLoading } = useCsmEarlyAdoption();
 
-  if (loading)
+  if (initialLoading)
     return (
       <StyledBlock>
         <Loader size="medium" />

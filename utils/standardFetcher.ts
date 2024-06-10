@@ -1,11 +1,12 @@
 import { extractErrorMessage } from 'utils';
 import { FetcherError } from './fetcherError';
 
-const DEFAULT_PARAMS = {
+const DEFAULT_PARAMS: RequestInit = {
   method: 'GET',
   headers: {
     'Content-type': 'application/json',
   },
+  mode: 'cors',
 };
 
 export const extractError = async (response: Response) => {
