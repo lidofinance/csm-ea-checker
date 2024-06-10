@@ -27,6 +27,8 @@ export const supportedChains = process.env?.SUPPORTED_CHAINS?.split(',').map(
 /** @type string */
 export const walletconnectProjectId = process.env.WALLETCONNECT_PROJECT_ID;
 
+export const earlyAdoptionListUrl = process.env.EARLY_ADOPTION_LIST_URL;
+
 /** @type boolean */
 export const ipfsMode = toBoolean(process.env.IPFS_MODE);
 

@@ -32,6 +32,5 @@ export * from './replaceAll';
 export * from './rpcProviders';
 export * from './shortenTokenValue';
 export * from './standardFetcher';
-export * from './swrAbortableMiddleware';
 export * from './track-matomo-event';
 export * from './weiToEth';

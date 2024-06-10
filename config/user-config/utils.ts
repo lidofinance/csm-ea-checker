@@ -17,5 +17,6 @@ export const getUserConfigDefault = (): UserConfigDefaultType => {
       [CHAINS.Holesky]: config.prefillUnsafeElRpcUrls17000,
     },
     walletconnectProjectId: config.walletconnectProjectId,
+    earlyAdoptionListUrl: config.earlyAdoptionListUrl,
   };
 };

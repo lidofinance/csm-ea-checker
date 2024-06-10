@@ -1,9 +1,8 @@
 import { FC } from 'react';
 
 import { Loader } from '@lidofinance/lido-ui';
-import { useCsmEarlyAdoption } from 'shared/hooks/useCsmEarlyAdoptionProof';
+import { useCsmEarlyAdoption } from 'shared/hooks';
 import {
-  ConsumedBlock,
   EligibleBlock,
   ErrorBlock,
   NotEligibleBlock,
@@ -11,7 +10,7 @@ import {
 } from './styles';
 
 export const EarlyAdoptionStatus: FC = () => {
-  const { isEligible, isConsumed, error, loading } = useCsmEarlyAdoption();
+  const { data: isEligible, error, loading } = useCsmEarlyAdoption();
 
   if (loading)
     return (
@@ -21,13 +20,6 @@ export const EarlyAdoptionStatus: FC = () => {
     );
 
   if (error) return <ErrorBlock>{error.message}</ErrorBlock>;
-
-  if (isConsumed)
-    return (
-      <ConsumedBlock>
-        You have already joined CSM during Early Adoption period
-      </ConsumedBlock>
-    );
 
   if (isEligible)
     return (

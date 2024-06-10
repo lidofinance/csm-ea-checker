@@ -8,4 +8,5 @@ export type UserConfigDefaultType = {
     [CHAINS.Holesky]: string[];
   };
   walletconnectProjectId: string | undefined;
+  earlyAdoptionListUrl: string | undefined;
 };

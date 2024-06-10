@@ -12,7 +12,7 @@ import {
 
 const getVersionInfo = () => {
   const { version, branch } = buildInfo;
-  const repoBaseUrl = 'https://github.com/lidofinance/csm-widget';
+  const repoBaseUrl = 'https://github.com/lidofinance/csm-ea-checker';
   if (version === 'REPLACE_WITH_VERSION')
     return {
       label: 'dev',
