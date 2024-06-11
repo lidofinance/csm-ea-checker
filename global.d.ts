@@ -52,6 +52,14 @@ declare module 'next/config' {
       developmentMode: boolean;
       isDevnet: string | undefined;
       earlyAdoptionListUrl: string | undefined;
+
+      prefillUnsafeElRpcUrls1: string[];
+      prefillUnsafeElRpcUrls17000: string[];
+      ipfsMode: boolean;
+      walletconnectProjectId: string | undefined;
+      supportedChains: number[];
+      defaultChain: number;
+      matomoHost: string | undefined;
     };
   };
 

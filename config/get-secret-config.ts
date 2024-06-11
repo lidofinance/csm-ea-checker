@@ -29,7 +29,6 @@ export const getSecretConfig = (): SecretConfigType => {
   return {
     ...serverRuntimeConfig,
 
-    // Keep fallback as in 'env-dynamics.mjs'
     defaultChain: Number(serverRuntimeConfig.defaultChain) || 17000,
 
     // Hack: in the current implementation we can treat an empty array as a "tuple" (conditionally)

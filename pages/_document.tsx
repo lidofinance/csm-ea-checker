@@ -132,7 +132,7 @@ export default class MyDocument extends Document {
           <Fonts />
           <LidoUIHead />
           {/* eslint-disable-next-line @next/next/no-sync-scripts */}
-          <script src={`${config.BASE_PATH_ASSET}/runtime/window-env.js`} />
+          {/* <script src={`${config.BASE_PATH_ASSET}/runtime/window-env.js`} /> */}
           <link
             rel="preload"
             href={config.earlyAdoptionListUrl}

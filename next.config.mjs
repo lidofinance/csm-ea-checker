@@ -1,15 +1,16 @@
-import NextBundleAnalyzer from '@next/bundle-analyzer';
-import buildDynamics from './scripts/build-dynamics.mjs';
-import generateBuildId from './scripts/generate-build-id.mjs';
-
-buildDynamics();
-
 // https://nextjs.org/docs/pages/api-reference/next-config-js/basePath
 const basePath = process.env.BASE_PATH;
 
 const developmentMode = process.env.NODE_ENV === 'development';
 const isIPFSMode = process.env.IPFS_MODE;
-const isDevnet = process.env.DEVNET;
+
+const toBoolean = (dataStr) => {
+  return !!(
+    dataStr?.toLowerCase?.() === 'true' ||
+    dataStr === true ||
+    Number.parseInt(dataStr, 10) === 1
+  );
+};
 
 // cache control
 export const CACHE_CONTROL_HEADER = 'x-cache-control';
@@ -22,14 +23,9 @@ export const CACHE_CONTROL_PAGES = [
 export const CACHE_CONTROL_VALUE =
   'public, max-age=15, s-max-age=30, stale-if-error=604800, stale-while-revalidate=172800';
 
-const withBundleAnalyzer = NextBundleAnalyzer({
-  enabled: process.env.ANALYZE_BUNDLE ?? false,
-});
-
-export default withBundleAnalyzer({
+export default {
   output: 'export',
   basePath,
-  generateBuildId,
 
   typescript: {
     // !! WARN !!
@@ -137,7 +133,6 @@ export default withBundleAnalyzer({
     // https://nextjs.org/docs/pages/api-reference/next-config-js/basePath
     basePath,
     developmentMode,
-    isDevnet,
 
     defaultChain: process.env.DEFAULT_CHAIN,
     rpcUrls_1: process.env.EL_RPC_URLS_1,
@@ -167,6 +162,16 @@ export default withBundleAnalyzer({
     basePath,
     developmentMode,
     earlyAdoptionListUrl: process.env.EARLY_ADOPTION_LIST_URL,
-    isDevnet,
+    prefillUnsafeElRpcUrls1:
+      process.env.PREFILL_UNSAFE_EL_RPC_URLS_1?.split(',') ?? [],
+    prefillUnsafeElRpcUrls17000:
+      process.env.PREFILL_UNSAFE_EL_RPC_URLS_17000?.split(',') ?? [],
+    ipfsMode: toBoolean(isIPFSMode),
+    walletconnectProjectId: process.env.WALLETCONNECT_PROJECT_ID,
+    supportedChains: process.env?.SUPPORTED_CHAINS?.split(',').map((chainId) =>
+      parseInt(chainId, 10),
+    ) ?? [17000],
+    defaultChain: parseInt(process.env.DEFAULT_CHAIN, 10) || 17000,
+    matomoHost: process.env.MATOMO_URL,
   },
-});
+};
