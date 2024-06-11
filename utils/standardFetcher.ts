@@ -3,9 +3,6 @@ import { FetcherError } from './fetcherError';
 
 const DEFAULT_PARAMS: RequestInit = {
   method: 'GET',
-  headers: {
-    'Content-type': 'application/json',
-  },
   mode: 'cors',
 };
 
