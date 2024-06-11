@@ -55,19 +55,15 @@ export default class MyDocument extends Document {
   }
 
   get metaTitle(): string {
-    return 'Stake with Lido | Lido';
+    return 'CSM Early Adoption eligibility checker | Lido';
   }
 
   get metaDescription(): string {
-    return (
-      'Liquid staking with Lido. ' +
-      'Stake Ether with Lido to get daily rewards while keeping full control of your staked tokens. ' +
-      'Start receiving rewards in just a few clicks.'
-    );
+    return 'This is a simple interface where you can check if your address is on the CSM Early Adoption (EA) list for Holesky testnet.';
   }
 
   get metaPreviewImgUrl(): string {
-    return `${host}/lido-preview.png`;
+    return `${host}/preview.png`;
   }
 
   render(): JSX.Element {
