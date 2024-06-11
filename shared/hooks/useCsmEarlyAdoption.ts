@@ -21,5 +21,5 @@ export const useCsmEarlyAdoption = () => {
   const { data: list, ...swr } = useCsmEarlyAdoptionList();
   invariant(address, 'Address should be defined');
 
-  return { ...swr, data: list?.includes(address) };
+  return { ...swr, data: list?.includes(address.toLowerCase() as Address) };
 };
