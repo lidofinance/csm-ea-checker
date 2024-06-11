@@ -2,28 +2,8 @@
 const basePath = process.env.BASE_PATH;
 
 const developmentMode = process.env.NODE_ENV === 'development';
-const isIPFSMode = process.env.IPFS_MODE;
 
-const toBoolean = (dataStr) => {
-  return !!(
-    dataStr?.toLowerCase?.() === 'true' ||
-    dataStr === true ||
-    Number.parseInt(dataStr, 10) === 1
-  );
-};
-
-// cache control
-export const CACHE_CONTROL_HEADER = 'x-cache-control';
-export const CACHE_CONTROL_PAGES = [
-  '/manifest.json',
-  '/favicon:size*',
-  '/',
-  '/runtime/window-env.js',
-];
-export const CACHE_CONTROL_VALUE =
-  'public, max-age=15, s-max-age=30, stale-if-error=604800, stale-while-revalidate=172800';
-
-export default {
+const config = {
   output: 'export',
   basePath,
 
@@ -34,15 +14,6 @@ export default {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
-
-  // IPFS next.js configuration reference:
-  // https://github.com/Velenir/nextjs-ipfs-example
-  trailingSlash: !!isIPFSMode,
-  assetPrefix: isIPFSMode ? './' : undefined,
-
-  // IPFS version has hash-based routing,
-  // so we provide only index.html in ipfs version
-  exportPathMap: isIPFSMode ? () => ({ '/': { page: '/' } }) : undefined,
 
   eslint: {
     ignoreDuringBuilds: true,
@@ -78,54 +49,12 @@ export default {
         use: [
           {
             loader: 'webpack-preprocessor-loader',
-            options: {
-              params: {
-                IPFS_MODE: isIPFSMode,
-              },
-            },
           },
         ],
       },
     );
 
     return config;
-  },
-  async headers() {
-    return [
-      {
-        // Apply these headers to all routes in your application.
-        source: '/(.*)',
-        headers: [
-          {
-            key: 'X-DNS-Prefetch-Control',
-            value: 'on',
-          },
-          {
-            key: 'Strict-Transport-Security',
-            value: 'max-age=63072000; includeSubDomains; preload',
-          },
-          {
-            key: 'Referrer-Policy',
-            value: 'same-origin',
-          },
-          {
-            key: 'x-content-type-options',
-            value: 'nosniff',
-          },
-          { key: 'x-xss-protection', value: '1' },
-          { key: 'x-download-options', value: 'noopen' },
-        ],
-      },
-      {
-        // required for gnosis save apps
-        source: '/manifest.json',
-        headers: [{ key: 'Access-Control-Allow-Origin', value: '*' }],
-      },
-      ...CACHE_CONTROL_PAGES.map((page) => ({
-        source: page,
-        headers: [{ key: CACHE_CONTROL_HEADER, value: CACHE_CONTROL_VALUE }],
-      })),
-    ];
   },
 
   // ATTENTION: If you add a new variable you should declare it in `global.d.ts`
@@ -137,24 +66,6 @@ export default {
     defaultChain: process.env.DEFAULT_CHAIN,
     rpcUrls_1: process.env.EL_RPC_URLS_1,
     rpcUrls_17000: process.env.EL_RPC_URLS_17000,
-    ethplorerApiKey: process.env.ETHPLORER_API_KEY,
-
-    oneInchApiKey: process.env.ONE_INCH_API_KEY,
-
-    cspTrustedHosts: process.env.CSP_TRUSTED_HOSTS,
-    cspReportUri: process.env.CSP_REPORT_URI,
-    cspReportOnly: process.env.CSP_REPORT_ONLY,
-
-    subgraphMainnet: process.env.SUBGRAPH_MAINNET,
-    subgraphGoerli: process.env.SUBGRAPH_GOERLI,
-    subgraphHolesky: process.env.SUBGRAPH_HOLESKY,
-    subgraphRequestTimeout: process.env.SUBGRAPH_REQUEST_TIMEOUT,
-
-    rateLimit: process.env.RATE_LIMIT,
-    rateLimitTimeFrame: process.env.RATE_LIMIT_TIME_FRAME,
-
-    ethAPIBasePath: process.env.ETH_API_BASE_PATH,
-    rewardsBackendAPI: process.env.REWARDS_BACKEND,
   },
 
   // ATTENTION: If you add a new variable you should declare it in `global.d.ts`
@@ -166,7 +77,7 @@ export default {
       process.env.PREFILL_UNSAFE_EL_RPC_URLS_1?.split(',') ?? [],
     prefillUnsafeElRpcUrls17000:
       process.env.PREFILL_UNSAFE_EL_RPC_URLS_17000?.split(',') ?? [],
-    ipfsMode: toBoolean(isIPFSMode),
+    ipfsMode: false,
     walletconnectProjectId: process.env.WALLETCONNECT_PROJECT_ID,
     supportedChains: process.env?.SUPPORTED_CHAINS?.split(',').map((chainId) =>
       parseInt(chainId, 10),
@@ -175,3 +86,5 @@ export default {
     matomoHost: process.env.MATOMO_URL,
   },
 };
+
+export default config;
