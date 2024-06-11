@@ -51,6 +51,7 @@ declare module 'next/config' {
       basePath: string | undefined;
       developmentMode: boolean;
       isDevnet: string | undefined;
+      earlyAdoptionListUrl: string | undefined;
     };
   };
 

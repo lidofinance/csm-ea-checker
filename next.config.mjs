@@ -166,6 +166,7 @@ export default withBundleAnalyzer({
   publicRuntimeConfig: {
     basePath,
     developmentMode,
+    earlyAdoptionListUrl: process.env.EARLY_ADOPTION_LIST_URL,
     isDevnet,
   },
 });
