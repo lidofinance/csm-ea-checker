@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { Loader } from '@lidofinance/lido-ui';
+import { Link, Loader } from '@lidofinance/lido-ui';
 import { useCsmEarlyAdoption } from 'shared/hooks';
 import {
   EligibleBlock,
@@ -23,14 +23,28 @@ export const EarlyAdoptionStatus: FC = () => {
 
   if (isEligible)
     return (
-      <EligibleBlock>
-        You are eligible to join CSM during Early Adoption period
-      </EligibleBlock>
+      <>
+        <EligibleBlock>
+          You are eligible to join CSM testnet during Early Adoption period!
+        </EligibleBlock>
+        <p>CSM testet will be lauched in July, stay tuned for the updates</p>
+      </>
     );
 
   return (
-    <NotEligibleBlock>
-      You are not eligible to join CSM during Early Adoption period
-    </NotEligibleBlock>
+    <>
+      <NotEligibleBlock>
+        You are not eligible to join CSM testnet during Early Adoption period
+      </NotEligibleBlock>
+      <p>
+        The permissionless phase of the CSM testet will start mid July. Check
+        out the blog post to see how you can get to the EA list for CSM mainnet.
+        Reach out on the{' '}
+        <Link href="https://discord.com/invite/lido" target="_blank">
+          Lido Discord
+        </Link>{' '}
+        in case of any questions.
+      </p>
+    </>
   );
 };

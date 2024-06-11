@@ -10,6 +10,6 @@ export const MainStyle = styled(Container)<ContainerProps>`
   ${({ size }) =>
     size === 'tight' &&
     css`
-      max-width: 590px;
+      max-width: 650px;
     `}
 `;
