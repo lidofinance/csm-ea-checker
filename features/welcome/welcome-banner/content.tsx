@@ -41,7 +41,14 @@ export const Content = () => (
     <p>
       If you assume your address is in one of these sources, please connect the
       corresponding wallet to this page to check if you’re eligible to join CSM
-      in the Early Adoption phase
+      in the Early Adoption phase, or check it manually in the{' '}
+      <Link
+        href="https://github.com/lidofinance/community-staking-module/blob/main/artifacts/holesky/early-adoption/addresses.json"
+        target="_blank"
+      >
+        .json
+      </Link>{' '}
+      file
     </p>
   </ContentWrapper>
 );
