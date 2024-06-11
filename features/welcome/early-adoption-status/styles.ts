@@ -1,4 +1,4 @@
-import { Block } from '@lidofinance/lido-ui';
+import { Block, ThemeName } from '@lidofinance/lido-ui';
 import styled from 'styled-components';
 
 export const StyledBlock = styled(Block)`
@@ -14,11 +14,15 @@ export const StyledBlock = styled(Block)`
 `;
 
 export const EligibleBlock = styled(StyledBlock)`
-  background: linear-gradient(97.63deg, #befce2 5.91%, #cdefed 66.16%);
+  background: ${({ theme }) =>
+    theme.name === ThemeName.light
+      ? 'linear-gradient(97.63deg, #befce2 5.91%, #cdefed 66.16%)'
+      : 'linear-gradient(97.63deg, #67dcab 5.91%, #50cdc5 66.16%)'};
 `;
 
 export const NotEligibleBlock = styled(StyledBlock)`
-  background: #d8e0ea;
+  background: ${({ theme }) =>
+    theme.name === ThemeName.light ? '#d8e0ea' : '#91919c'};
 `;
 
 export const ConsumedBlock = styled(StyledBlock)`
