@@ -25,7 +25,8 @@ export const EarlyAdoptionStatus: FC = () => {
     return (
       <>
         <EligibleBlock>
-          You are eligible to join CSM testnet during Early Adoption period!
+          You are eligible to join the CSM testnet during the Early Adoption
+          period!
         </EligibleBlock>
         <p>CSM testet will be lauched in July, stay tuned for the updates</p>
       </>
@@ -34,7 +35,8 @@ export const EarlyAdoptionStatus: FC = () => {
   return (
     <>
       <NotEligibleBlock>
-        You are not eligible to join CSM testnet during Early Adoption period
+        You are not eligible to join the CSM testnet during the Early Adoption
+        period
       </NotEligibleBlock>
       <p>
         The permissionless phase of the CSM testet will start mid July. Check
