@@ -13,7 +13,7 @@ import { Fonts, LidoUIHead } from '@lidofinance/lido-ui';
 import { config } from 'config';
 import { contentSecurityPolicy } from 'config/csp';
 
-let host = 'https://stake.lido.fi';
+let host = 'https://lidofinance.github.io';
 
 const secureHeaders = createHeadersObject({ contentSecurityPolicy });
 const cspMetaTagContent =
@@ -63,7 +63,7 @@ export default class MyDocument extends Document {
   }
 
   get metaPreviewImgUrl(): string {
-    return `${host}/preview.png`;
+    return `${host}/csm-ea-checker/preview.png`;
   }
 
   render(): JSX.Element {

@@ -17,7 +17,12 @@ export const Welcome: FC = () => {
         <>
           <Content />
           <Connect fullwidth />
-          <Link>Learn more about Early Adoption</Link>
+          <Link
+            href="https://blog.lido.fi/introducing-early-adoption-for-community-staking-module/"
+            target="_blank"
+          >
+            Learn more about Early Adoption
+          </Link>
         </>
       )}
     </WelcomeBanner>
