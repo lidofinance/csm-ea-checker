@@ -7,6 +7,7 @@ import {
   Subheader,
   Wrapper,
 } from './styles';
+import { Link } from '@lidofinance/lido-ui';
 
 export const WelcomeBanner: FC<PropsWithChildren> = ({ children }) => (
   <Wrapper>
@@ -14,7 +15,9 @@ export const WelcomeBanner: FC<PropsWithChildren> = ({ children }) => (
       <Heading>
         <CSMLogo />
         <Header>Early Adoption eligibility checker</Header>
-        <Subheader>for CSM Holesky testnet</Subheader>
+        <Subheader>
+          for <Link href="https://csm.testnet.fi">CSM Holesky testnet</Link>
+        </Subheader>
       </Heading>
       {children}
     </BlockStyled>

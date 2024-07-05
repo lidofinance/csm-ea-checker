@@ -28,7 +28,10 @@ export const EarlyAdoptionStatus: FC = () => {
           You are eligible to join the CSM testnet during the Early Adoption
           period!
         </EligibleBlock>
-        <p>CSM testet will be lauched in July, stay tuned for the updates</p>
+        <p>
+          We are waiting for you at{' '}
+          <Link href="https://csm.testnet.fi">csm.testnet.fi</Link>
+        </p>
       </>
     );
 
