@@ -1,6 +1,7 @@
 import { Link } from '@lidofinance/lido-ui';
 import { ContentWrapper } from './styles';
 
+// TODO: update links
 const LINKS = [
   {
     title: 'Solo-stakers list curated by Rated',
@@ -24,8 +25,8 @@ export const Content = () => (
   <ContentWrapper>
     <p>
       This is a simple interface where you can check if your address is on the
-      CSM Early Adoption (EA) list for Holesky testnet. The Early Adoption list
-      for CSM testnet uses four main sources of addresses:
+      CSM Early Adoption (EA) list for mainnet. The Early Adoption list for CSM
+      mainnet uses four main sources of addresses:
     </p>
     <p>
       <ul>
@@ -43,7 +44,7 @@ export const Content = () => (
       corresponding wallet to this page to check if you’re eligible to join CSM
       in the Early Adoption phase, or check it manually in the{' '}
       <Link
-        href="https://github.com/lidofinance/community-staking-module/blob/main/artifacts/holesky/early-adoption/addresses.json"
+        href="https://github.com/lidofinance/community-staking-module/blob/main/artifacts/mainnet/early-adoption/addresses.json"
         target="_blank"
       >
         .json

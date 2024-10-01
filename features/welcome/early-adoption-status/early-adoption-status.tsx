@@ -21,29 +21,30 @@ export const EarlyAdoptionStatus: FC = () => {
 
   if (error) return <ErrorBlock>{error.message}</ErrorBlock>;
 
+  // TODO: start date
   if (isEligible)
     return (
       <>
         <EligibleBlock>
-          You are eligible to join the CSM testnet during the Early Adoption
-          period!
+          You are eligible to join the CSM during the Early Adoption period!
         </EligibleBlock>
         <p>
-          We are waiting for you at{' '}
-          <Link href="https://csm.testnet.fi">csm.testnet.fi</Link>
+          Permissionless CSM mainnet is expected in spring 2025, stay tuned for
+          the updates
         </p>
       </>
     );
 
+  // TODO: start date
   return (
     <>
       <NotEligibleBlock>
-        You are not eligible to join the CSM testnet during the Early Adoption
+        You are not eligible to join the CSM mainnet during the Early Adoption
         period
       </NotEligibleBlock>
       <p>
-        The permissionless phase of the CSM testet will start mid July. Check
-        out the blog post to see how you can get to the EA list for CSM mainnet.
+        The permissionless phase of the CSM mainnet is expected in spring 2025.
+        <br />
         Reach out on the{' '}
         <Link href="https://discord.com/invite/lido" target="_blank">
           Lido Discord
