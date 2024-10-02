@@ -59,7 +59,7 @@ export default class MyDocument extends Document {
   }
 
   get metaDescription(): string {
-    return 'This is a simple interface where you can check if your address is on the CSM Early Adoption (EA) list for mainnet.';
+    return 'A simple interface where you can check if your address is on the CSM Early Adoption (EA) list for mainnet.';
   }
 
   get metaPreviewImgUrl(): string {
@@ -87,8 +87,9 @@ export default class MyDocument extends Document {
           />
           <link
             rel="icon"
-            type="image/svg+xml"
-            href={`${config.BASE_PATH_ASSET}/favicon-512x512.svg`}
+            type="image/png"
+            sizes="512x512"
+            href={`${config.BASE_PATH_ASSET}/favicon-512x512.png`}
           />
           <link
             rel="apple-touch-icon"
