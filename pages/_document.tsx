@@ -59,7 +59,7 @@ export default class MyDocument extends Document {
   }
 
   get metaDescription(): string {
-    return 'This is a simple interface where you can check if your address is on the CSM Early Adoption (EA) list for Holesky testnet.';
+    return 'This is a simple interface where you can check if your address is on the CSM Early Adoption (EA) list for mainnet.';
   }
 
   get metaPreviewImgUrl(): string {
