@@ -1,6 +1,7 @@
 import { MATOMO_CLICK_EVENTS_TYPES } from 'consts/matomo-click-events';
 import { MatomoLink } from 'shared/components';
 import { ContentWrapper } from './styles';
+import { Text } from '@lidofinance/lido-ui';
 
 // TODO: update links
 const LINKS = [
@@ -9,7 +10,7 @@ const LINKS = [
     link: 'https://github.com/rated-network/solo-stakers',
   },
   {
-    title: 'CSM-related Galxe OATs holders with 5+ points',
+    title: 'CSM-related Galxe OATs holders with 6+ points',
     link: 'https://app.galxe.com/quest/lido/GCPoDUBedQ',
   },
   {
@@ -19,6 +20,14 @@ const LINKS = [
   {
     title: 'Solo-stakers list curated by StakeCat',
     link: 'https://github.com/Stake-Cat/Solo-Stakers',
+  },
+  {
+    title: 'Good performers from the CSM Testnet',
+    link: 'https://github.com/lidofinance/lido-oracle/tree/feat/perf-data-collector',
+  },
+  {
+    title: 'Purchasers of Dappnode Home x Lido before September 30th',
+    link: 'https://dappnode.com/collections/hot-releases/products/home-lido',
   },
 ];
 
@@ -32,13 +41,17 @@ export const Content = () => (
     <ul>
       {LINKS.map(({ title, link }, i) => (
         <li key={i}>
-          <MatomoLink
-            matomoEvent={MATOMO_CLICK_EVENTS_TYPES.clickSourceLink}
-            href={link}
-            target="_blank"
-          >
-            {title}
-          </MatomoLink>
+          {link ? (
+            <MatomoLink
+              matomoEvent={MATOMO_CLICK_EVENTS_TYPES.clickSourceLink}
+              href={link}
+              target="_blank"
+            >
+              {title}
+            </MatomoLink>
+          ) : (
+            title
+          )}
         </li>
       ))}
     </ul>
