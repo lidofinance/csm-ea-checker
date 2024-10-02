@@ -11,7 +11,7 @@ const LINKS = [
   },
   {
     title: 'CSM-related Galxe OATs holders with 6+ points',
-    link: 'https://app.galxe.com/quest/lido/GCPoDUBedQ',
+    link: 'https://app.galxe.com/quest/lido/leaderboard',
   },
   {
     title: 'Obol Techne credential holders',
@@ -36,7 +36,7 @@ export const Content = () => (
     <p>
       This is a simple interface where you can check if your address is on the
       CSM Early Adoption (EA) list for mainnet. The Early Adoption list for CSM
-      mainnet uses four main sources of addresses:
+      mainnet uses six main sources of addresses:
     </p>
     <ul>
       {LINKS.map(({ title, link }, i) => (
@@ -61,7 +61,7 @@ export const Content = () => (
       in the Early Adoption phase, or check it manually in the{' '}
       <MatomoLink
         matomoEvent={MATOMO_CLICK_EVENTS_TYPES.clickJsonSource}
-        href="https://github.com/lidofinance/community-staking-module/blob/main/artifacts/mainnet/early-adoption/addresses.json"
+        href="https://github.com/lidofinance/community-staking-module/blob/develop/artifacts/mainnet/early-adoption/addresses.json"
         target="_blank"
       >
         .json
