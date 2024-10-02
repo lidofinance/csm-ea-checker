@@ -1,4 +1,5 @@
-import { Link } from '@lidofinance/lido-ui';
+import { MATOMO_CLICK_EVENTS_TYPES } from 'consts/matomo-click-events';
+import { MatomoLink } from 'shared/components';
 import { ContentWrapper } from './styles';
 
 // TODO: update links
@@ -28,27 +29,30 @@ export const Content = () => (
       CSM Early Adoption (EA) list for mainnet. The Early Adoption list for CSM
       mainnet uses four main sources of addresses:
     </p>
-    <p>
-      <ul>
-        {LINKS.map(({ title, link }, i) => (
-          <li key={i}>
-            <Link href={link} target="_blank">
-              {title}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </p>
+    <ul>
+      {LINKS.map(({ title, link }, i) => (
+        <li key={i}>
+          <MatomoLink
+            matomoEvent={MATOMO_CLICK_EVENTS_TYPES.clickSourceLink}
+            href={link}
+            target="_blank"
+          >
+            {title}
+          </MatomoLink>
+        </li>
+      ))}
+    </ul>
     <p>
       If you assume your address is in one of these sources, please connect the
       corresponding wallet to this page to check if you’re eligible to join CSM
       in the Early Adoption phase, or check it manually in the{' '}
-      <Link
+      <MatomoLink
+        matomoEvent={MATOMO_CLICK_EVENTS_TYPES.clickJsonSource}
         href="https://github.com/lidofinance/community-staking-module/blob/main/artifacts/mainnet/early-adoption/addresses.json"
         target="_blank"
       >
         .json
-      </Link>{' '}
+      </MatomoLink>{' '}
       file
     </p>
   </ContentWrapper>

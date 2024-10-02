@@ -1,6 +1,7 @@
 import { FC } from 'react';
 
-import { Link } from '@lidofinance/lido-ui';
+import { MATOMO_CLICK_EVENTS_TYPES } from 'consts/matomo-click-events';
+import { MatomoLink } from 'shared/components';
 import { useAccount } from 'shared/hooks';
 import { Connect } from 'shared/wallet';
 import { EarlyAdoptionStatus } from './early-adoption-status';
@@ -17,12 +18,13 @@ export const Welcome: FC = () => {
         <>
           <Content />
           <Connect fullwidth />
-          <Link
+          <MatomoLink
+            matomoEvent={MATOMO_CLICK_EVENTS_TYPES.clickLearMoreLink}
             href="https://blog.lido.fi/introducing-early-adoption-for-community-staking-module/"
             target="_blank"
           >
             Learn more about Early Adoption
-          </Link>
+          </MatomoLink>
         </>
       )}
     </WelcomeBanner>

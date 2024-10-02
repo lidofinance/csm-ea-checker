@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { Link, Loader } from '@lidofinance/lido-ui';
+import { Loader } from '@lidofinance/lido-ui';
 import { useCsmEarlyAdoption } from 'shared/hooks';
 import {
   EligibleBlock,
@@ -8,6 +8,8 @@ import {
   NotEligibleBlock,
   StyledBlock,
 } from './styles';
+import { MatomoLink } from 'shared/components';
+import { MATOMO_CLICK_EVENTS_TYPES } from 'consts/matomo-click-events';
 
 export const EarlyAdoptionStatus: FC = () => {
   const { data: isEligible, error, initialLoading } = useCsmEarlyAdoption();
@@ -46,9 +48,13 @@ export const EarlyAdoptionStatus: FC = () => {
         The permissionless phase of the CSM mainnet is expected in spring 2025.
         <br />
         Reach out on the{' '}
-        <Link href="https://discord.com/invite/lido" target="_blank">
+        <MatomoLink
+          matomoEvent={MATOMO_CLICK_EVENTS_TYPES.clickDiscordLink}
+          href="https://discord.com/invite/lido"
+          target="_blank"
+        >
           Lido Discord
-        </Link>{' '}
+        </MatomoLink>{' '}
         in case of any questions.
       </p>
     </>
