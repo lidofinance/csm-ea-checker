@@ -1,7 +1,6 @@
 import { MATOMO_CLICK_EVENTS_TYPES } from 'consts/matomo-click-events';
 import { MatomoLink } from 'shared/components';
 import { ContentWrapper } from './styles';
-import { Text } from '@lidofinance/lido-ui';
 
 // TODO: update links
 const LINKS = [
@@ -35,8 +34,8 @@ export const Content = () => (
   <ContentWrapper>
     <p>
       This is a simple interface where you can check if your address is on the
-      CSM Early Adoption (EA) list for mainnet. The Early Adoption list for CSM
-      mainnet uses six main sources of addresses:
+      CSM Early Adoption (EA) list for Mainnet. The Early Adoption list for the
+      CSM Mainnet uses six main sources of addresses:
     </p>
     <ul>
       {LINKS.map(({ title, link }, i) => (

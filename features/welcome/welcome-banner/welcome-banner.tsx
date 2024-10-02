@@ -14,7 +14,7 @@ export const WelcomeBanner: FC<PropsWithChildren> = ({ children }) => (
       <Heading>
         <CSMLogo />
         <Header>Early Adoption eligibility checker</Header>
-        <Subheader>for CSM Mainnet</Subheader>
+        <Subheader>for the CSM Mainnet</Subheader>
       </Heading>
       {children}
     </BlockStyled>

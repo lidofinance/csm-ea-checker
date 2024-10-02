@@ -1,7 +1,7 @@
 {
   "name": "CSM Early Adoption eligibility checker | Lido",
   "short_name": "CSM EA checker | Lido",
-  "description": "A simple interface where you can check if your address is on the CSM Early Adoption (EA) list for mainnet.",
+  "description": "A simple interface where you can check if your address is on the CSM Early Adoption (EA) list for Mainnet.",
   "iconPath": "favicon-512x512.png",
   "icons": [
     {

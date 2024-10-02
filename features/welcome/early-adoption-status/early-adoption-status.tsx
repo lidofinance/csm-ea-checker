@@ -31,8 +31,8 @@ export const EarlyAdoptionStatus: FC = () => {
           You are eligible to join the CSM during the Early Adoption period!
         </EligibleBlock>
         <p>
-          Permissionless CSM mainnet is expected in spring 2025, stay tuned for
-          the updates
+          The permissionless phase of the CSM Mainnet is expected in spring
+          2025, stay tuned for the updates
         </p>
       </>
     );
@@ -41,11 +41,11 @@ export const EarlyAdoptionStatus: FC = () => {
   return (
     <>
       <NotEligibleBlock>
-        You are not eligible to join the CSM mainnet during the Early Adoption
+        You are not eligible to join the CSM Mainnet during the Early Adoption
         period
       </NotEligibleBlock>
       <p>
-        The permissionless phase of the CSM mainnet is expected in spring 2025.
+        The permissionless phase of the CSM Mainnet is expected in spring 2025.
         <br />
         Reach out on the{' '}
         <MatomoLink
