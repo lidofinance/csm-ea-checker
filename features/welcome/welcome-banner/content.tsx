@@ -56,6 +56,15 @@ export const Content = () => (
       ))}
     </ul>
     <p>
+      <MatomoLink
+        matomoEvent={MATOMO_CLICK_EVENTS_TYPES.clickLearMoreLink}
+        href="https://research.lido.fi/t/community-staking-module/5917/62"
+        target="_blank"
+      >
+        More info about EA List formation
+      </MatomoLink>
+    </p>
+    <p>
       If you assume your address is in one of these sources, please connect the
       corresponding wallet to this page to check if you’re eligible to join CSM
       in the Early Adoption phase, or check it manually in the{' '}
