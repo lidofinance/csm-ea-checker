@@ -20,7 +20,7 @@ export const Welcome: FC = () => {
           <Connect fullwidth />
           <MatomoLink
             matomoEvent={MATOMO_CLICK_EVENTS_TYPES.clickLearMoreLink}
-            href="https://blog.lido.fi/introducing-early-adoption-for-community-staking-module/"
+            href="https://blog.lido.fi/csm-early-adoption/"
             target="_blank"
           >
             Learn more about Early Adoption
