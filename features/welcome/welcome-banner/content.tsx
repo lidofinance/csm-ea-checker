@@ -69,7 +69,7 @@ export const Content = () => (
       in the Early Adoption phase, or check it manually in the{' '}
       <MatomoLink
         matomoEvent={MATOMO_CLICK_EVENTS_TYPES.clickJsonSource}
-        href="https://github.com/lidofinance/community-staking-module/blob/develop/artifacts/mainnet/early-adoption/addresses.json"
+        href="https://github.com/lidofinance/community-staking-module/blob/main/artifacts/mainnet/early-adoption/addresses.json"
         target="_blank"
       >
         .json

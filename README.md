@@ -11,4 +11,4 @@ This is a simple interface where you can check if your address is on the CSM Ear
 
 [More info about EA List formation](https://research.lido.fi/t/community-staking-module/5917/62)
 
-If you assume your address is in one of these sources, please connect the corresponding wallet to this page to check if you’re eligible to join the CSM in the Early Adoption phase, or check it manually in the [.json](https://github.com/lidofinance/community-staking-module/blob/develop/artifacts/mainnet/early-adoption/addresses.json) file
+If you assume your address is in one of these sources, please connect the corresponding wallet to this page to check if you’re eligible to join the CSM in the Early Adoption phase, or check it manually in the [.json](https://github.com/lidofinance/community-staking-module/blob/main/artifacts/mainnet/early-adoption/addresses.json) file
